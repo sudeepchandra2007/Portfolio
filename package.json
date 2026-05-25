@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio website",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudeepchandra2007/Portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "vercel"
+  ],
+  "author": "Sudeep Chandra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudeepchandra2007/Portfolio/issues"
+  },
+  "homepage": "https://github.com/sudeepchandra2007/Portfolio#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
