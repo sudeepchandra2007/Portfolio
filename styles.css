@@ -523,6 +523,20 @@ main {
     box-shadow 200ms ease;
 }
 
+.proof-card,
+.skill-group,
+.project-card,
+.project-visual,
+.resume-preview,
+.contact-link,
+.note {
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
 .proof-card {
   padding: 22px;
   border-radius: 28px;
@@ -1185,15 +1199,15 @@ main {
   .about-card:focus-within,
   .experience-card:hover,
   .experience-card:focus-within {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     border-color: var(--line-strong);
-    background: rgba(252, 250, 245, 0.88);
+    background: rgba(252, 250, 245, 0.96);
     box-shadow: var(--shadow);
   }
 
   .lift-card:hover,
   .lift-card:focus-within {
-    --hover-lift: -8px;
+    --hover-lift: -10px;
     border-color: var(--line-strong);
     box-shadow: var(--shadow);
   }
@@ -1206,21 +1220,23 @@ main {
   .project-card:focus-within,
   .project-visual:hover,
   .project-visual:focus-within {
-    background: rgba(252, 250, 245, 0.88);
+    border-color: var(--line-strong);
+    background: rgba(252, 250, 245, 0.96);
+    box-shadow: var(--shadow);
   }
 
   .note:hover,
   .note:focus-within {
-    --note-lift: -8px;
+    --note-lift: -10px;
     border-color: rgba(138, 106, 61, 0.3);
     box-shadow: 0 34px 88px rgba(21, 29, 28, 0.18);
   }
 
   .resume-preview:hover,
   .resume-preview:focus-within {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     border-color: var(--line-strong);
-    background: rgba(252, 250, 245, 0.88);
+    background: rgba(252, 250, 245, 0.96);
     box-shadow: var(--shadow);
   }
 
@@ -1237,9 +1253,9 @@ main {
 
   .contact-link:hover,
   .contact-link:focus-visible {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     border-color: rgba(248, 246, 241, 0.26);
-    background: rgba(248, 246, 241, 0.12);
+    background: rgba(248, 246, 241, 0.16);
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.18);
   }
 }
@@ -1254,7 +1270,8 @@ main {
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    background 180ms ease;
   transform:
     perspective(1400px)
     translate3d(0, calc(var(--scene-card-shift) + var(--hover-lift)), 0)

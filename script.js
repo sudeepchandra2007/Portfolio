@@ -144,7 +144,7 @@ tiltCards.forEach((card) => {
 
     card.style.setProperty("--tilt-x", `${rotateY.toFixed(2)}deg`);
     card.style.setProperty("--tilt-y", `${rotateX.toFixed(2)}deg`);
-    card.style.setProperty("--hover-lift", "-8px");
+    card.style.setProperty("--hover-lift", "-10px");
     card.style.setProperty("--glow-x", `${(x * 100).toFixed(2)}%`);
     card.style.setProperty("--glow-y", `${(y * 100).toFixed(2)}%`);
   });
