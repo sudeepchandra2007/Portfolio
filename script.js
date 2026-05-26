@@ -46,17 +46,12 @@ if (reduceMotion) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
       });
     },
     {
       threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px"
+      rootMargin: "-8% 0px -8% 0px"
     }
   );
 
@@ -71,9 +66,33 @@ document.addEventListener(
   (event) => {
     root.style.setProperty("--pointer-x", `${event.clientX}px`);
     root.style.setProperty("--pointer-y", `${event.clientY}px`);
+
+    if (resumePreview) {
+      const bounds = resumePreview.getBoundingClientRect();
+      const isOverResumePreview =
+        event.clientX >= bounds.left &&
+        event.clientX <= bounds.right &&
+        event.clientY >= bounds.top &&
+        event.clientY <= bounds.bottom;
+
+      body.classList.toggle("is-over-resume-preview", isOverResumePreview);
+    }
   },
   { passive: true }
 );
+
+const resumePreview = document.querySelector(".resume-preview");
+
+if (resumePreview) {
+  const hideBloom = () => body.classList.add("is-over-resume-preview");
+  const showBloom = () => body.classList.remove("is-over-resume-preview");
+
+  resumePreview.addEventListener("pointerenter", hideBloom);
+  resumePreview.addEventListener("pointerleave", showBloom);
+  resumePreview.addEventListener("focusin", hideBloom);
+  resumePreview.addEventListener("focusout", showBloom);
+  window.addEventListener("scroll", showBloom, { passive: true });
+}
 
 const sceneNodes = document.querySelectorAll("[data-scene]");
 
